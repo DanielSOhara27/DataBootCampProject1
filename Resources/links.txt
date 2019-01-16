@@ -1,0 +1,17 @@
+Twitter:
+- https://developer.twitter.com/en/use-cases/analyze (Overview on how to use their different APIs)
+- https://developer.twitter.com/en/docs/tweets/search/guides/build-standard-query (Overview on how to build queries)
+- https://developer.twitter.com/en/docs/tweets/search/overview (Overview on how to use the standard API)
+- https://developer.twitter.com/en/docs/basics/things-every-developer-should-know (Twitter Developer FAQ)
+- https://developer.twitter.com/en/docs/basics/rate-limiting.html (How Twitter rates are measured)
+- https://developer.twitter.com/en/docs/basics/rate-limits.html (Twitter Rate limits per tier)
+- https://blog.twitter.com/developer/en_us/topics/tools/2018/new-developer-requirements-to-protect-our-platform.html (Twitter article on changes for new developers)
+
+
+Kaggle:
+- https://www.kaggle.com/bittlingmayer/amazonreviews (Amazon Reviews dataset for Sentiment Analysis - 2017)
+- https://www.kaggle.com/jiajinliang/200000-amazon-reviews/version/1 (Generic Amazon Reviews - 2018)
+- https://www.kaggle.com/bharadwaj6/kindle-reviews (Kindle Reviews - 2018)
+
+Reddit:
+- https://redditclient.readthedocs.io/en/latest/oauth/ (How to use oauth with your developer account on reddit)
