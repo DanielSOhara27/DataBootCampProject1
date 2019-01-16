@@ -440,3 +440,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/osx,macos,python,windows,pycharm,intellij,intellij+all,intellij+iml,jupyternotebook,visualstudiocode,jupyternotebooks
+Resources/datasets/zipped/kindle-reviews.zip
+Resources/datasets/zipped/200000-amazon-reviews.zip
+Resources/datasets/zipped/amazonreviews.zip
