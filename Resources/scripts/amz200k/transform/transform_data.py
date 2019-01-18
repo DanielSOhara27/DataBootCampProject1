@@ -38,11 +38,11 @@ def extractColumns(reviewsDict):
             print(f"Skipping review {counter} of {size}")
 
         categories.append(category)
-        itemID.append(item)
-        reviewText.append(rText)
+        itemID.append(item.strip())
+        reviewText.append(rText.strip())
         rating.append(rat)
-        summary.append(summ)
-        reviewTime.append(rTime)
+        summary.append(summ.strip())
+        reviewTime.append(rTime.strip())
 
     print(f"\n{'-' * 35}\nFinished processing dataset\n{'-' * 35}")
 
