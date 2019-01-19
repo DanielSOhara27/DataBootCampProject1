@@ -12,8 +12,8 @@ we are analyzing 3 different datasets concerning product reviews.
 
 ### Project Outline
 ````
-For phase 1, we are analazying all three datasets sepparately from each other and we are 
-perfroming the same data exploration and mining processes on all three. For this part we
+For phase 1, we are analyzing all three datasets separately from each other and we are 
+performing the same data exploration and mining processes on all three. For this part we
 are simply trying to get a general overview of what kind of responses we can find on the 
 datasets; we are also getting some simple insights into what makes each dataset unique.
 ````
@@ -25,7 +25,7 @@ For this project we found 3 different datasets:
 1) Amazon Product Reviews Generic (https://www.kaggle.com/jiajinliang/200000-amazon-reviews/version/1)
 2) Amazon Kindle Reviews (https://www.kaggle.com/bharadwaj6/kindle-reviews)
 3) We will be connecting to Twitter's Search API Free - Twitter extract tweets related to Amazon products, Kindle (https://developer.twitter.com/en/docs/tweets/search/overview)
-4) This is an optional dataset - Amazon Reviews for Sentinment Analysis (https://www.kaggle.com/bittlingmayer/amazonreviews)
+4) This is an optional dataset - Amazon Reviews for Sentiment Analysis (https://www.kaggle.com/bittlingmayer/amazonreviews)
 ````
 
 ### Tasks
