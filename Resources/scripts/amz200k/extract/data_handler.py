@@ -33,7 +33,6 @@ def randomSet(low, high, size):
     # Returning a list of unique indexes sorted in ascending order that will be used in later steps
     return indexPD["index"].tolist()
 
-
 def extractData(indexSet, filelines):
     # This function reads each line of the variable fileline (This is a list with
     # with all the reviews read from amz200k.json we will now parse the lines from
@@ -71,7 +70,6 @@ def extractData(indexSet, filelines):
 
     return jsonOutput
 
-
 def readFile(filepath):
     #                    - - - - - - - - -
     #                    - - IMPORTANT - -
@@ -85,3 +83,16 @@ def readFile(filepath):
         filelines = amz20kfile.readlines()
         amz20kfile.close()
     return filelines
+
+def unzipData(fromPath, toPath):
+    import zipfile
+
+    try:
+        zip_ref = zipfile.ZipFile(fromPath, 'r')
+        zip_ref.extractall(path=toPath)
+        zip_ref.close()
+
+    except:
+        print("There was an error unzipping the file")
+        raise
+
