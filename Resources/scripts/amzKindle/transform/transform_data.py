@@ -1,6 +1,6 @@
 from pandas import DataFrame
 
-# Formatting Amz200k Review Times from MM DD, YYYY
+# Formatting kindle_reviews Review Times from MM DD, YYYY
 # to MySQL 5.7 compatible version: YYYY-MM-DD
 # i.e "06 27, 2014" -> "2014-27-01"
 def formatDate(reviewTime_list):
@@ -18,16 +18,18 @@ def formatDate(reviewTime_list):
 
         clean_times.append(new_time)
 
+
     return clean_times
+
 
 def extractColumns(reviewsDict):
 
-    categories = list()
-    itemID = list()
-    reviewText = list()
-    rating = list()
-    summary = list()
-    reviewTime = list()
+    reviewersid = list()
+    asins = list()
+    reviewtexts = list()
+    overalls = list()
+    summaries = list()
+    reviewtimes = list()
 
     # The final list will be held here
     outputList = list()
@@ -44,50 +46,48 @@ def extractColumns(reviewsDict):
             counter+=1 # counter for the aesthetic printing
 
             # Trying to extract the data we need
-            category = review["categories"]
-            item = review["itemID"]
-            rText = review["reviewText"]
-            rat = review["rating"]
-            summ = review["summary"]
-            rTime = review["reviewTime"]
+            reviewerid = review["reviewerID"]
+            asin = review["asin"]
+            reviewtext = review["reviewText"]
+            overall = review["overall"]
+            summary = review["summary"]
+            reviewtime = review["reviewTime"]
 
             print(f"Finished processing review | {counter} of {size}")
 
         except:
             print(f"Skipping review {counter} of {size}")
 
-        categories.append(category)
-        itemID.append(item.strip())
-        reviewText.append(rText.strip())
-        rating.append(rat)
-        summary.append(summ.strip())
-        reviewTime.append(rTime.strip())
+        reviewersid.append(reviewerid)
+        asins.append(asin.strip())
+        reviewtexts.append(reviewtext.strip())
+        overalls.append(overall)
+        summaries.append(summary.strip())
+        reviewtimes.append(reviewtime.strip())
 
-
-
-    # Amz200K.json dataset has the review time format MM DD, YYYY
+    # kindle_reviews.json dataset has the review time format MM DD, YYYY
     # This format is not recognized by MySQL 5.7, therefore I am
     # reformatting it to be YYYY-MM-DD
-    reviewTime = formatDate(reviewTime_list=reviewTime)
+    reviewtimes = formatDate(reviewTime_list=reviewtimes)
 
     print(f"\n{'-' * 35}\nFinished processing dataset\n{'-' * 35}")
 
-    outputList.append(reviewTime)
-    outputList.append(itemID)
-    outputList.append(rating)
-    outputList.append(summary)
-    outputList.append(categories)
-    outputList.append(reviewText)
+    outputList.append(reviewtimes)
+    outputList.append(asins)
+    outputList.append(overalls)
+    outputList.append(summaries)
+    outputList.append(reviewersid)
+    outputList.append(reviewtexts)
 
     return outputList
 
 def toDataFrame(cleanColumns):
     dataframe = DataFrame({
         "Review Time" : cleanColumns[0],
-        "Item ID" : cleanColumns[1],
-        "Rating" : cleanColumns[2],
+        "ASIN" : cleanColumns[1],
+        "Overall" : cleanColumns[2],
         "Summary" : cleanColumns[3],
-        "Categories" : cleanColumns[4],
+        "Reviewer ID" : cleanColumns[4],
         "Review Text" : cleanColumns[5]
     })
 

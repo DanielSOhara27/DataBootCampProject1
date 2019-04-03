@@ -4,7 +4,7 @@ from ast import literal_eval
 
 
 def randomSet(low, high, size):
-    # This function helps choose a subset of user defined size from Amazon's 200K reviews file
+    # This function helps choose a subset of user defined size from Amazon's Kindle reviews file
     # This function also returns a list of random indexes that will help prepare the data for
     # reading
 
@@ -81,9 +81,9 @@ def readFile(filepath):
     # the url to the datasets can be found in the project proposal's readme
     #
     #
-    with open(filepath, "r") as amz20kfile:
-        filelines = amz20kfile.readlines()
-        amz20kfile.close()
+    with open(filepath, "r") as amzkindlefile:
+        filelines = amzkindlefile.readlines()
+        amzkindlefile.close()
     return filelines
 
 def unzipData(fromPath, toPath):
