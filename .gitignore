@@ -443,3 +443,6 @@ $RECYCLE.BIN/
 Resources/datasets/zipped/kindle-reviews.zip
 Resources/datasets/zipped/200000-amazon-reviews.zip
 Resources/datasets/zipped/amazonreviews.zip
+Resources/datasets/zipped/amazonreviews-sentiment.zip
+Resources/datasets/unzipped/kindle-reviews/kindle_reviews.json
+Resources/datasets/unzipped/200000-amazon-reviews/amz200k.json
