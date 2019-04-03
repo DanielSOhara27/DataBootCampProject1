@@ -1,5 +1,24 @@
 from pandas import DataFrame
 
+# Formatting Amz200k Review Times from MM DD, YYYY
+# to MySQL 5.7 compatible version: YYYY-MM-DD
+# i.e "06 27, 2014" -> "2014-27-01"
+def formatDate(reviewTime_list):
+    clean_times = list()
+
+    for row in reviewTime_list:
+
+        rowArray = row.split(" ")
+        new_time = rowArray[2]+"-"+rowArray[0]+"-"
+
+        if(len(rowArray[1]) > 2):
+            new_time +=rowArray[1][:2]
+        else:
+            new_time +=rowArray[1][:1]
+
+        clean_times.append(new_time)
+
+    return clean_times
 
 def extractColumns(reviewsDict):
 
@@ -43,6 +62,13 @@ def extractColumns(reviewsDict):
         rating.append(rat)
         summary.append(summ.strip())
         reviewTime.append(rTime.strip())
+
+
+
+    # Amz200K.json dataset has the review time format MM DD, YYYY
+    # This format is not recognized by MySQL 5.7, therefore I am
+    # reformatting it to be YYYY-MM-DD
+    reviewTime = formatDate(reviewTime_list=reviewTime)
 
     print(f"\n{'-' * 35}\nFinished processing dataset\n{'-' * 35}")
 
