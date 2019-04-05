@@ -7,7 +7,7 @@ myDictionary = {"name":"Flask", "version":"0.01", "status":"development"}
 app = Flask(__name__)
 
 # 3. Define what to do when a user hits the index route
-@app.route("/")
+@app.route("/", methods=['GET','POST'])
 def home():
     print("Server received request for 'Home' page")
     return "Welcome to my API with Json responses!"
