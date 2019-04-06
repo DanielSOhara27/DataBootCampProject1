@@ -10,14 +10,15 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/amz200k-example')
+@app.route('/amz200k-table')
 def amz200k_example():
-    return str(connector.exampleTable(1))
+    return jsonify(connector.exampleTable(1))
+    # return render_template('amazon.html', data=jsonify(connector.exampleTable(1)))
 
 
-@app.route('/kindle-example')
+@app.route('/kindle-table')
 def kindle_example():
-    return str(connector.exampleTable(2))
+    return jsonify(connector.exampleTable(2))
 
 
 @app.route('/students')

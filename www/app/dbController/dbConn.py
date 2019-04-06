@@ -2,6 +2,8 @@
 from flask import g
 from www.app.dbController import host, user, pwd, db, dbTest
 import mysql.connector
+from datetime import datetime, date
+from ast import literal_eval
 
 _connection_prod = mysql.connector.connect(
             database=db,
@@ -19,7 +21,8 @@ _connection_debug = mysql.connector.connect(
             auth_plugin='mysql_native_password'
         )
 
-def startConnection(debug=True):
+
+def startconnection(debug=True):
     myDB = db
 
     if debug:
@@ -52,6 +55,18 @@ def getCol(scope, columnScope='all'):
         else:
             return ['ASIN', 'Reviewer ID', 'Overall', 'Review Time']
 
+def toDict(mysqlResult, columns):
+    myDictionaries = dict()
+
+    for row in mysqlResult:
+        myDictionary = dict()
+        for col_index in range(len(row)):
+
+            myDictionary[columns[col_index]] = row[col_index]
+
+        myDictionaries[myDictionary[columns[0]]] = myDictionary
+
+    return myDictionaries
 
 def find(scope=1, debug=False, columns=['*'], customization=['']):
     # Control variables used to switch between sandbox and prod
@@ -93,11 +108,11 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
     # Adding From {tablename} clause
     query += f" FROM `{str(table)}`"
 
-    # Adding customization clauses
+    # Adding customization clauses - limit, group by, order by,
     for index in range(custom_length):
         query += f" {str(customization[index])}"
 
-    # Adding closing semicolong to end query
+    # Adding closing semicolon to end query
     query += ";"
 
     # Starting MySQL 5.7 connection
@@ -106,10 +121,14 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
         # Terniary Operator
         mycursor = _connection_prod.cursor() if debug else _connection_debug.cursor()
         mycursor.execute(query)
-        print(query)
         myresult = mycursor.fetchall()
         mycursor.close()
-        return str(myresult)
+        print(type(myresult))
+        print(type(myresult[0]))
+        print(myresult)
+
+        return toDict(mysqlResult=myresult, columns=columns)
+        # return str(myresult)
 
     except mysql.connector.errors.ProgrammingError:
         print(query)
@@ -121,8 +140,10 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
         print(query)
         raise
 
+
 def exampleTable(scope=1):
     return find(scope=scope, debug=False, columns=getCol(scope=scope, columnScope=1), customization=['LIMIT 5'])
+
 
 def createStudent(firstName, lastName):
     mycursor = _connection_prod.cursor()

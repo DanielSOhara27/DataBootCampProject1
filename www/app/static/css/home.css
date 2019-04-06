@@ -87,6 +87,7 @@ body{
 
 .card-button-a{
     text-align: center;
+    padding-left: 1em;
 }
 
 .index-cards{
@@ -108,6 +109,10 @@ body{
 
 .myTable{
     border: 1px solid lightgrey;
+}
+
+.card-section{
+    padding: 1em;
 }
 
 @media (max-width: 600px) {

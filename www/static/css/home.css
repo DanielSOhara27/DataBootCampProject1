@@ -115,6 +115,10 @@ body{
     padding: 1em;
 }
 
+tr.column-headers{
+    color: black;
+}
+
 @media (max-width: 600px) {
     .navbar-top-right-expanded{
         display: block;
