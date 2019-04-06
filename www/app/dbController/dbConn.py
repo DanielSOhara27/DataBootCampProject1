@@ -48,7 +48,7 @@ def getCol(scope, columnScope='all'):
             return ['Item ID', 'Review Time', 'Rating']
     elif int(scope) == 2:
         if int(columnScope) == 1:
-            return ['kindle_id', 'ASIN', 'Reviewer ID', 'Overall', 'Summary Text', 'Review Time']
+            return ['kindle_id', 'ASIN', 'Reviewer ID', 'Overall', 'Summary', 'Review Time']
         else:
             return ['ASIN', 'Reviewer ID', 'Overall', 'Review Time']
 
@@ -60,6 +60,7 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
 
     # Control variable used to prepare de query
     col_length = len(columns)
+    custom_length = len(customization)
 
     # Switching between tables
     if debug:
@@ -74,13 +75,30 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
 
     # Adding the columns needed to prepare the query
     for col_index in range(col_length):
-        query += f"'{str(columns[col_index])}'"
+
+        # For debugging purposes only
+        if not debug:
+            query += "`"
+
+        query += f"{str(columns[col_index])}"
+
+        # For debuggin purposes only
+        if not debug:
+            query += "`"
 
         # Will only add a comma at the end if we are not last element of the column list
         if col_length - (col_index + 1) > 0:
             query += ","
 
-    query += f" FROM {str(table)} LIMIT 10;"
+    # Adding From {tablename} clause
+    query += f" FROM `{str(table)}`"
+
+    # Adding customization clauses
+    for index in range(custom_length):
+        query += f" {str(customization[index])}"
+
+    # Adding closing semicolong to end query
+    query += ";"
 
     # Starting MySQL 5.7 connection
     try:
@@ -88,6 +106,7 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
         # Terniary Operator
         mycursor = _connection_prod.cursor() if debug else _connection_debug.cursor()
         mycursor.execute(query)
+        print(query)
         myresult = mycursor.fetchall()
         mycursor.close()
         return str(myresult)
@@ -103,7 +122,7 @@ def find(scope=1, debug=False, columns=['*'], customization=['']):
         raise
 
 def exampleTable(scope=1):
-    return find(scope=scope, debug=False, columns=getCol(scope=scope,columnScope=1))
+    return find(scope=scope, debug=False, columns=getCol(scope=scope, columnScope=1), customization=['LIMIT 5'])
 
 def createStudent(firstName, lastName):
     mycursor = _connection_prod.cursor()
