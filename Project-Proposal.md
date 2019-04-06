@@ -7,7 +7,7 @@
 ### Project Description
 ````
 In order to better understand customer behavior, expectations and levels of satisfaction 
-we are analyzing 3 different datasets concerning product reviews. 
+we are analyzing 2 different datasets concerning product reviews. 
 ````
 
 ### Project Outline
@@ -16,6 +16,9 @@ For phase 1, we are analyzing all three datasets separately from each other and 
 performing the same data exploration and mining processes on all three. For this part we
 are simply trying to get a general overview of what kind of responses we can find on the 
 datasets; we are also getting some simple insights into what makes each dataset unique.
+
+For phase 2, allowing the user to freely explore the data from the datasets so that we
+all can come up with our own stories related to Amazon reviews. 
 ````
 
 ### Datasets Used
@@ -28,14 +31,14 @@ For this project we found 3 different datasets:
 4) This is an optional dataset - Amazon Reviews for Sentiment Analysis (https://www.kaggle.com/bittlingmayer/amazonreviews)
 ````
 
-### Tasks
+### Tasks Performed
 ````
 1) Get Raw Data 
 2) Explore all 3 datasets to find similarities and dimensions that can be used to cross-match them
 3) Clean all 3 datasets and add new dimensions (positive, negative, positive-happy, negative-happy, positive-angry, negative-angy, positive-sad, negative-sad, etc)
-5) Answer the following questions for each dataset:
-5a) What is the distribution of the data? How are the ratings handled? (point-based, star-based, etc)
-5b) What how many reviews include comments? How many include reviews from confirmed buyers? What are the outliers like?
-5c) What do we now of the reviewers? (Demographics-optional if possible)
-5D) Insights into the genre, type, category of product
+4) Answer the following questions for each dataset:
+4a) What is the distribution of the data? How are the ratings handled? (point-based, star-based, etc)
+4b) What how many reviews include comments? How many include reviews from confirmed buyers? What are the outliers like?
+4c) What do we now of the reviewers? (Demographics-optional if possible)
+4D) Insights into the genre, type, category of product
 ````

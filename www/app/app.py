@@ -1,27 +1,49 @@
-# 1. Import Flask.
-from flask import Flask, jsonify
+from flask import Flask, render_template, request, jsonify
+# from flask_mysqldb import MySQL
+import www.app.dbController.dbConn as connector
 
-myDictionary = {"name":"Flask", "version":"0.01", "status":"development"}
-
-# 2. Create an app, being sure to pass __name__
 app = Flask(__name__)
 
-# 3. Define what to do when a user hits the index route
-@app.route("/", methods=['GET','POST'])
-def home():
-    print("Server received request for 'Home' page")
-    return "Welcome to my API with Json responses!"
 
-# 4. Define what to do when a user hits the /about route
-@app.route("/normal")
-def normal():
-    print("Server received a request for the 'normal response' page")
-    return myDictionary
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'dev'
+app.config['MYSQL_PASSWORD'] = 'dev123'
+app.config['MYSQL_DB'] = 'flaskTest'
 
-@app.route("/json")
-def json():
-    print("Server received request for 'Contact' page")
-    return jsonify(myDictionary)
+# mysql = MySQL(app)
 
-if __name__ == "__main__":
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == "POST":
+        details = request.form
+        firstName = details['fname'] #Getting form data
+        lastName = details['lname'] #Getting form data
+        return connector.createStudent(firstName,lastName)
+
+    return render_template('index.html')
+
+
+@app.route('/amz200k-example')
+def amz200k_example():
+    return str(connector.exampleTable(1))
+
+
+@app.route('/kindle-example')
+def kindle_example():
+    return str(connector.exampleTable(2))
+
+
+@app.route('/students')
+def students():
+
+    return str(connector.find(debug=True))
+
+@app.route('/addStudent')
+def addStudent():
+
+    return render_template('test.html')
+
+
+if __name__ == '__main__':
     app.run(debug=True)

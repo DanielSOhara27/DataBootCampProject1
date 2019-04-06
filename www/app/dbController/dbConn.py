@@ -7,14 +7,16 @@ _connection_prod = mysql.connector.connect(
             database=db,
             host=host,
             user=user,
-            passwd=pwd
+            passwd=pwd,
+            auth_plugin='mysql_native_password'
         )
 
 _connection_debug = mysql.connector.connect(
-            database=dbTest,
+            database=db,
             host=host,
             user=user,
-            passwd=pwd
+            passwd=pwd,
+            auth_plugin='mysql_native_password'
         )
 
 def startConnection(debug=True):
@@ -24,17 +26,17 @@ def startConnection(debug=True):
         myDB = dbTest
 
     if 'db' not in g:
-        g.db = mysql.connector.connect(
+        mySql = mysql.connector.connect(
             database=myDB,
             host=host,
             user=user,
             passwd=pwd
         )
 
-    return g.db
+    return mySql.cursor()
 
 
-def getCol(scope, columnScope):
+def getCol(scope, columnScope='all'):
     if columnScope == 'all':
         return ['*']
 
@@ -51,7 +53,7 @@ def getCol(scope, columnScope):
             return ['ASIN', 'Reviewer ID', 'Overall', 'Review Time']
 
 
-def find(scope=1, debug=False, columns=['*']):
+def find(scope=1, debug=False, columns=['*'], customization=['']):
     # Control variables used to switch between sandbox and prod
     table = ''
     myDB = db
@@ -72,13 +74,13 @@ def find(scope=1, debug=False, columns=['*']):
 
     # Adding the columns needed to prepare the query
     for col_index in range(col_length):
-        query += f"{str(columns[col_index])}"
+        query += f"'{str(columns[col_index])}'"
 
         # Will only add a comma at the end if we are not last element of the column list
         if col_length - (col_index + 1) > 0:
             query += ","
 
-    query += f" FROM {str(table)};"
+    query += f" FROM {str(table)} LIMIT 10;"
 
     # Starting MySQL 5.7 connection
     try:
@@ -99,6 +101,16 @@ def find(scope=1, debug=False, columns=['*']):
     except mysql.connector.errors.DataError:
         print(query)
         raise
+
+def exampleTable(scope=1):
+    return find(scope=scope, debug=False, columns=getCol(scope=scope,columnScope=1))
+
+def createStudent(firstName, lastName):
+    mycursor = _connection_prod.cursor()
+    mycursor.execute(f"Insert INTO myusers (firstname, lastname) values ('{str(firstName)}','{str(lastName)}');")
+    _connection_prod.commit()
+
+    return "Finished"
 
 
 
