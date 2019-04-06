@@ -1,5 +1,5 @@
 // Global variables
-var url = "http://127.0.0.1:5000/amz200k-table"
+var url = "http://127.0.0.1:5000/kindle-table"
 
 //Getting the data from the flask app
 d3.json(url).then( response => {
@@ -13,12 +13,12 @@ d3.json(url).then( response => {
 
     for(var i = 1; i < 6; i++){
         var tR = tBody.append("tr");
-        tR.append("td").text(response[i]["amz_id"]);
-        tR.append("td").text(response[i]["Item ID"]);
+        tR.append("td").text(response[i]["kindle_id"]);
+        tR.append("td").text(response[i]["Reviewer ID"]);
+        tR.append("td").text(response[i]["ASIN"]);
         tR.append("td").text(response[i]["Review Time"]);
-        tR.append("td").text(response[i]["Rating"]);
+        tR.append("td").text(response[i]["Overall"]);
         tR.append("td").text(response[i]["Summary"]);
-        tR.append("td").text(response[i]["Review Text"]);
     }
 
 

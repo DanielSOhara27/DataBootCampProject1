@@ -119,6 +119,36 @@ tr.column-headers{
     color: black;
 }
 
+.myRow{
+    padding-top: 1em;
+}
+
+.download-csv{
+    margin: 1.5em 1em 1em 1em;
+}
+
+.inner-card{
+    padding-top: 1em;
+}
+
+.table-title{
+    margin-bottom: .5em;
+}
+
+.tCard{
+    padding-left: 0.5em;
+    padding-top: 1em;
+}
+
+.summary-table{
+    padding-top: 1em;
+    padding-left: 1em;
+}
+
+.section-title{
+    padding-left: 0.5em;
+}
+
 @media (max-width: 600px) {
     .navbar-top-right-expanded{
         display: block;
