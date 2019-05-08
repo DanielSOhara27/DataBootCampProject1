@@ -1,10 +1,9 @@
 from os import path
 
 # Importing my scripts for Kindle
-from Resources.scripts.amzKindle.extract import data_handler
-from Resources.scripts.amzKindle.transform import transform_data
-from Resources.scripts.amzKindle.load import output_handler
-
+from Resources.scripts.old.amzKindle.extract import data_handler
+from Resources.scripts.old.amzKindle.transform import transform_data
+from Resources.scripts.old.amzKindle.load import output_handler
 
 # This script goes over the Amazon's raw Kindle reviews from Kaggle - datasets not included in base code
 filepath = path.join("..", "..", "datasets", "unzipped", "kindle-reviews", "kindle_reviews.json")

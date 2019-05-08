@@ -1,9 +1,9 @@
 from os import path
 
 # importing my scripts
-from Resources.scripts.amz200k.extract import data_handler
-from Resources.scripts.amz200k.transform import transform_data
-from Resources.scripts.amz200k.load import output_handler
+from Resources.scripts.old.amz200k.extract import data_handler
+from Resources.scripts.old.amz200k.transform import transform_data
+from Resources.scripts.old.amz200k.load import output_handler
 
 # This script goes over the Amazon's raw 200K reviews from Kaggle - datasets not included in base code
 filepath = path.join("..", "..", "datasets", "unzipped", "200000-amazon-reviews", "amz200k.json")
