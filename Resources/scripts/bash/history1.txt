@@ -1,0 +1,34 @@
+    1  pip
+    2  pip3
+    3  pip2
+    4  pip2.7
+    5  pip3.6
+    6  python
+    7  ls /usr/bin/ | grep pip
+    8  sudo 
+    9  apt install pip3-pip
+   10  apt install python3-pip
+   11  apt update && apt install python3-pip
+   12  ls /usr/bin/ | grep pip
+   13  ln -fs /usr/bin/pip3 /usr/bin/pip
+   14  pip --version
+   15  pip install numpy pyspark
+   16  pip install ipython
+   17  python
+   18  python3
+   19  ln -fs /usr/bin/python3 /usr/bin/python
+   20  python --version
+   21  clear
+   22  pyspark
+   23  apt install -y openjdk-8-jdk
+   24  env | grep java
+   25  env | grep Java
+   26  env | grep JAVA
+   27  pyspark
+   28  exit
+   29  pip --version
+   30  pyspark
+   31  exit
+   32  hist 
+   33  history
+

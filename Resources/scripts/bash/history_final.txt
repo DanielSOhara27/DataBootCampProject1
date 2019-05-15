@@ -1,0 +1,500 @@
+   76  mongo -v
+   77  mongo --help
+   78  clear
+   79  mongos -v
+   80  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-MongoDB-Module/
+   81  ls
+   82  ls -la
+   83  vi gitignore
+   84  clear
+   85  ls
+   86  mkdir Day-1
+   87  mkdir Day-2
+   88  brew
+   89  pip install beautifulsoup4
+   90  pip3 install beautifulsoup4
+   91  pip install --upgrade pip
+   92  pip3 install --upgrade pip
+   93  pip install pymongo
+   94  pip3 install pymongo
+   95  ls
+   96  cd /
+   97  ls
+   98  cd usr/
+   99  ls
+  100  cd ../
+  101  ls
+  102  mkdir -p /data/db
+  103  sudo mkdir -p /data/db
+  104  sudo chown -R 'mongod' /data/db
+  105  clear
+  106  mongod
+  107  ls -la /data/db
+  108  ls -la /data
+  109  sudo chown -R mongod /data/db
+  110  sudo chown -R 'mongod' /data/db
+  111  whoami
+  112  sudo chown -R 'dani' /data/db
+  113  mongod
+  114  clear
+  115  mongod
+  116  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-Web-Challenge/
+  117  ls
+  118  ls -la
+  119  vi .gitignore 
+  120  pwd
+  121  cd DataBootcamp-ETL-MiniProject/
+  122  ls
+  123  cd Resources/Raw/
+  124  ls
+  125  vi zonas-de-patrullaje-2018.csv 
+  126  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-ETL-MiniProject/
+  127  ls
+  128  ls -la
+  129  cp .gitignore ../DataBootcamp-WebScraping-Challenge/
+  130  cd ../DataBootcamp-WebScraping-Challenge/
+  131  ls
+  132  ls -la
+  133  vi .gitignore 
+  134  /Applications/Python\ 3.7/Install\ Certificates.command ; exit;
+  135  cd /usr/local/
+  136  ls
+  137  cd bin/
+  138  ls
+  139  cd python3.7
+  140  ls -la
+  141  clear
+  142  ls -la | grep "python*"
+  143  open /Applications/Python\ 3.7/Install\ Certificates.command 
+  144  pip
+  145  pip install --upgrade pip
+  146  pip3 install --upgrade pip
+  147  pip install PyMongo
+  148  pip3 install PyMongo
+  149  pip install flask_pymongo
+  150  pip3 install flask_pymongo
+  151  clear
+  152  pwd
+  153  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-WebScraping-Challenge/
+  154  ls
+  155  clear
+  156  python app.py 
+  157  python app.py 
+  158  clear
+  159  clear
+  160  python app.py 
+  161  clear
+  162  python app.py 
+  163  python app.py 
+  164  python app.py 
+  165  clear
+  166  python app.py 
+  167  cd Documents/Dev/
+  168  ls
+  169  cd Data\ Bootcamp/
+  170  ls
+  171  cd DataBootcamp-ETL-MiniProject/
+  172  ,s
+  173  ls -la
+  174  cp .gitignore ../DataBootcamp-Javascript-Module/
+  175  cd ../DataBootcamp-Javascript-Module/
+  176  ls
+  177  clear
+  178  ls -la
+  179  cd Documents/Dev/
+  180  ls
+  181  cd Data\ Bootcamp/
+  182  cd DataBootcamp-Javascript-Module/
+  183  ls
+  184  ls -la
+  185  rm -f .DS_Store 
+  186  ls -la Day-1/
+  187  ls -lar 
+  188  ls -la -r .
+  189  ls -r
+  190  ls -laR .
+  191  rm -f Day-2/.DS_Store 
+  192  clear
+  193  cd 
+  194  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-Javascript-Dashboarding/Day-3/
+  195  ls
+  196  cd flask_apps/
+  197  pip install flask-sqlalchemy
+  198  ssh -u dohara@estratec.com -p
+  199  ssh dohara@estratec.com
+  200  ssh 10.0.0.3 -u dohara@estratec.com -p
+  201  ssh 10.0.0.3@dohara -p
+  202  ssh 10.0.0.3@dohara
+  203  ssh dohara@10.0.0.3
+  204  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-Javascript-Dashboarding/
+  205  pwd
+  206  ls -la
+  207  clear
+  208  cd Day-5/
+  209  ls
+  210  python -m http.server
+  211  brew install heroku/brew/heroku
+  212  heroku --version
+  213  heroku login
+  214  cd Documents/Dev/
+  215  ls
+  216  mkdir Heroku
+  217  cd Heroku/
+  218  ls
+  219  git clone https://github.com/heroku/python-getting-started.git
+  220  ls
+  221  cd python-getting-started/
+  222  heroku create
+  223  git push heroku master
+  224  heroku ps:scale web=1
+  225  heroku open
+  226  git add *
+  227  git commit *
+  228  clear
+  229  python -v
+  230  clear
+  231  python --version
+  232  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-Plotly-Challenge/
+  233  ls
+  234  cd Answered_hw/
+  235  ls
+  236  clear
+  237  python app.py 
+  238  cd ~
+  239  clear
+  240  cd Documents/Dev/Data\ Bootcamp/DataBootcamp-Plotly-Challenge/
+  241  ls
+  242  clear
+  243  heroku --version
+  244  heroku login
+  245  pip install -r requirements.txt 
+  246  pip install gunicron
+  247  pip install gunicorn
+  248  pip freeze > requirements.txt 
+  249  web: gunicorn app:app
+  250  vi Procfile
+  251  heroku create databootcamp-plotly-challenge
+  252  git add .
+  253  git commit
+  254  git commit -m "update 1"
+  255  git push
+  256  git push heroku master
+  257  git add .
+  258  git commit -m "update 2"
+  259  git push heroku master
+  260  rm runtime.txt 
+  261  clear
+  262  ls
+  263  heroku buildpacks:set heroku/python
+  264  make test
+  265  git push heroku master
+  266  clear
+  267  heroku logs
+  268  herkou buildpacks:set heroku/python
+  269  heroku buildpacks:set heroku/python
+  270  clear
+  271  git add *
+  272  git commit *
+  273  git push heroku master
+  274  clear
+  275  conda create -n plotly-challenge ptyhon=3.7.1
+  276  source activate plotly-challenge
+  277  conda create -n plotly-challenge python=3.7
+  278  conda activate plotly-challenge
+  279  pip install gunicorn
+  280  pip install psycopg2
+  281  pip install pandas
+  282  ls
+  283  rm Procfile 
+  284  ls -la
+  285  clear
+  286  pip install flask
+  287  pip install flask-sqlalchemy
+  288  python app.py 
+  289  clear
+  290  python initdb.py
+  291  ls
+  292  ls
+  293  pip freeze > requirements.txt 
+  294  touch Procfile
+  295  vi Procfile 
+  296  heroku login
+  297  heroku login
+  298  clear
+  299  git add .
+  300  git commit -am "testing deployment again"
+  301  git push keroku master
+  302  git push heroku master
+  303  heroku buildpacks:set heroku/python
+  304  python --version
+  305  clear
+  306  ls
+  307  vi runtime.txt
+  308  git add .
+  309  git commit -m "bla"
+  310  git push heroku master
+  311  pip freeze > requirements.txt 
+  312  clear
+  313  ls
+  314  git stauts
+  315  git status
+  316  git add .
+  317  git commit -m "bla"
+  318  git push heroku master
+  319  ls
+  320  cat Procfile 
+  321  git status
+  322  git commit -am "testas"
+  323  git status
+  324  git push heroku master
+  325  clear
+  326  pip install gunicorn
+  327  pip freeze > requirements.txt 
+  328  heroku login
+  329  git init
+  330  heroku git:remote -a databootcamp-plotly-challenge
+  331  git add .
+  332  git commit -m "test"
+  333  git push heroku master
+  334  heroku buildpacks:set heroku/python
+  335  git push heroku master
+  336  gs
+  337  cd ..
+  338  ls
+  339  mkdir deploy
+  340  cp DataBootcamp-Plotly-Challenge/* deploy/
+  341  cp -r DataBootcamp-Plotly-Challenge/* deploy/
+  342  ls
+  343  cd deploy/
+  344  git status
+  345  git init
+  346  heroku git:remote -a databootcamp-plotly-challenge
+  347  git add . 
+  348  git status
+  349  git commit -m "test"
+  350  git push
+  351  git push heroku master
+  352  r
+  353  r --update
+  354  clear
+  355  rm -rf /Applications/R.app
+  356  sudo rm -rf /Library/Frameworks/R.framework
+  357  sudo rm /usr/bin/{R,Rscript}
+  358  cd /private/var/folders/pf/qy2vmcd52fddzpc48nph79j40000gn/T/  
+  359  ls
+  360  cd Rtmp5MEmwr/
+  361  ls
+  362  clear
+  363  ls -la
+  364  cd downloaded_packages/
+  365  ls
+  366  ls | grep "tidyverse* || rlang"
+  367  ls | grep rlang*
+  368  clear
+  369  pwd
+  370  cd Documents/Dev/Data\ Bootcamp/DataBootCampProject1/
+  371  ls
+  372  cd www/
+  373  ls
+  374  clear
+  375  cd app
+  376  flask
+  377  python flask
+  378  vi app.py
+  379  flask run
+  380  clear
+  381  mysqldump
+  382  ls -la
+  383  cat .mysql_history 
+  384  clear
+  385  clear
+  386  ls -la
+  387  ls /usr/local/bin/
+  388  vi /etc/paths
+  389  pwd
+  390  cd Desktop/
+  391  touch databootcamp_reviews.sql
+  392  cat databootcamp_reviews.sql 
+  393  clear
+  394  cat databootcamp_reviews.sql 
+  395  clear
+  396  rm databootcamp_reviews.sql 
+  397  touch databootcamp_reviews.sql
+  398  mysqldump
+  399  mysqldump --add-drop-database databootcamp_reviews amz200k amzkindle
+  400  mysql -u dev -p
+  401  clear
+  402  mysqldump -u dev -p--add-drop-database databootcamp_reviews amz200k amzkindle
+  403  mysqldump -u dev -p --add-drop-database databootcamp_reviews amz200k amzkindle
+  404  mysqldump -u dev -p --add-drop-database databootcamp_reviews
+  405  mysqldump -u dev -p --databases  databootcamp_reviews
+  406  clear
+  407  mysqldump -u dev -p --databases  databootcamp_reviews > databootcamp_reviews.sql
+  408  ls
+  409  cat databootcamp_reviews.sql 
+  410  cd Documents/Dev/Data\ Bootcamp/DataBootCampProject1/
+  411  clear
+  412  ls
+  413  cd www/app/
+  414  ls
+  415  clear
+  416  ls
+  417  ls
+  418  python apptest.py 
+  419  pip install flask_mysqldb
+  420  clear
+  421  python apptest.py 
+  422  clear
+  423  python apptest.py 
+  424  clear
+  425  python apptest.py 
+  426  clear
+  427  python apptest.py 
+  428  clear
+  429  python apptest.py 
+  430  pwd
+  431  python apptest.py 
+  432  clear
+  433  python apptest.py 
+  434  python apptest.py 
+  435  clear
+  436  python apptest.py 
+  437  clear
+  438  pwd
+  439  clear
+  440  python apptest.py [B
+  441  python apptest.py
+  442  pip install mysql-connector
+  443  clear
+  444  python apptest.py 
+  445  python
+  446  clear
+  447  ls
+  448  touch test.py
+  449  vi test.py 
+  450  python test.py 
+  451  vi test.py 
+  452  python test.py 
+  453  vi test.py 
+  454  python test.py 
+  455  vi test.py 
+  456  python test.py 
+  457  open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
+  458  pip install python-graphviz
+  459  pip install pydot
+  460  pip install python-graphviz
+  461  pip install graphviz
+  462  pip install mrjob
+  463  pip install pyspark
+  464  java -v
+  465  java
+  466  java --version
+  467  clear
+  468  pip mrjob
+  469  pip install mrjob
+  470  brew --version
+  471  docker --version
+  472  docker ps
+  473  ps docker
+  474  clear
+  475  docker ps
+  476  docker info
+  477  clear
+  478  docker run hello-world
+  479  docker ps
+  480  cd Downloads/docker-pyspark-master
+  481  ls
+  482  clear
+  483  ./Dockerfile 
+  484  docker build .
+  485  docker images
+  486  docker run dbe128d13fe8
+  487  docker ps
+  488  docker ps
+  489  docker ps -a
+  490  clear
+  491  docker images
+  492  docker rmi fce289e99eb9 d131e0fa2585 dbe128d13fe8
+  493  docker rmi --force fce289e99eb9 d131e0fa2585 dbe128d13fe8
+  494  docker images
+  495  clear
+  496  docker rmi d131e0fa2585
+  497  clear
+  498  docker images
+  499  clear
+  500  docker build -t pyspark --no-cache .
+  501  docker images
+  502  docker rmi *
+  503  docker rmi --force *
+  504  docker images
+  505  docker rmi a95ef40dab53
+  506  docker rmi a95ef40dab53 --force
+  507  docker images
+  508  clear
+  509  docker rmi --force d131e0fa2585
+  510  clear
+  511  docker images
+  512  docker build -t pyspark --no-cache .
+  513  pwd
+  514  cd Downloads/
+  515  cd Docker.dmg 
+  516  clear
+  517  ls
+  518  cd docker-pyspark-master
+  519  docker build -t pyspark --no-cache .
+  520  clear
+  521  docker images
+  522  docker ps
+  523  docker run ubuntu -d
+  524  docker run
+  525  docker run --help
+  526  docker run -d ubuntu
+  527  docker ps
+  528  docker ps -a
+  529  docker ps
+  530  docker ps -a
+  531  docker exec -it 7503545acb25 /bin/bash
+  532  docker run 7503545acb25 /bin/bash
+  533  docker run ubuntu /bin/bash
+  534  docker ps 
+  535  docker ps -a
+  536  docker exec -it ubuntu /bin/bash
+  537  docker run -it ubuntu
+  538  docker ps -a
+  539  docker run -it ubuntu
+  540  docker rmi --force
+  541  docker rmi --force *
+  542  docker images
+  543  docker rmi --force 6151605c6c6a
+  544  docker images
+  545  docker rmi --force d131e0fa2585
+  546  clear
+  547  docker images
+  548  pwd
+  549  ls -la
+  550  docker build -t pyspark --no-cache .
+  551  docker run -it ubuntu
+  552  docker pas
+  553  docker ps
+  554  docker ps -a
+  555  docker start 9bf65b90e574
+  556  docker ps
+  557  docker exec -it 9bf65b90e574 /bin/bash
+  558  clear
+  559  docker cp --help
+  560  docker images
+  561  docker rmi --force d82d345acf08
+  562  docker rmi --force d131e0fa2585
+  563  docker images
+  564  docker ps -a
+  565  docker exec -it 9bf65b90e574 /bin/bash
+  566  docker images
+  567  docker rmi --force d131e0fa2585
+  568  docker stop 9bf65b90e574
+  569  docker rmi --force d131e0fa2585
+  570  clear
+  571  docker images
+  572  docker run -p 7077:7077 -p 4040:4040 -v /Users/dani/Documents/Dev/Data Bootcamp/DataBootCampProject1/Resources:~ -it ubuntu
+  573  docker run -p 7077:7077 -p 4040:4040 -v /Users/dani/Documents/Dev/Data\Bootcamp/DataBootCampProject1/Resources:~ -it ubuntu
+  574  docker run -p 7077:7077 -p 4040:4040 -v '/Users/dani/Documents/Dev/Data Bootcamp/DataBootCampProject1/Resources:/home' -it ubuntu
+  575  history > history_final.txt
